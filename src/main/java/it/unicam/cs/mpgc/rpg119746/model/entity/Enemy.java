@@ -1,6 +1,6 @@
 package it.unicam.cs.mpgc.rpg119746.model.entity;
 
-public class Enemy extends GameCharacter{
+public abstract class Enemy extends GameCharacter{
 
     private final int expReward;
 
@@ -10,6 +10,8 @@ public class Enemy extends GameCharacter{
         this.expReward=expReward;
 
     }
+
+    public abstract void takeTurn(GameCharacter player);
 
     public int getExpReward() {return this.expReward; }
 
