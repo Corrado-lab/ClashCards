@@ -5,7 +5,7 @@ public abstract class GameCharacter {
     private final String name;
     private int healthPoints;
     private final int maxHealthPoints;
-    private final int baseDamage;
+    private  int baseDamage;
     private boolean isAlive;
 
     public GameCharacter(String name, int maxHealthPoints, int baseDamage){
@@ -23,6 +23,12 @@ public abstract class GameCharacter {
     public int getHealthPoints() { return healthPoints; }
     public int getMaxHealthPoints() { return maxHealthPoints; }
     public int getBaseDamage() { return baseDamage; }
+
+    public void setBaseDamage(int damage){
+        if(damage<0){
+        throw new IllegalArgumentException("Il danno non puo essere negativo");
+        }
+    this.baseDamage=damage;}
 
     public boolean isAlive() { return this.isAlive; }
 
@@ -54,6 +60,17 @@ public abstract class GameCharacter {
     }
     
     public abstract void useAbility(GameCharacter target);
+
+     public void heal(int amount) {
+        if (amount < 0) {
+            throw new IllegalArgumentException("La quantità di cura non può essere negativa! Cura inserita: " + amount);
+        }
+
+        if (this.isAlive()) {
+        
+            this.healthPoints = Math.min(this.maxHealthPoints, this.healthPoints + amount);
+        }
+    }
 
 
 }
