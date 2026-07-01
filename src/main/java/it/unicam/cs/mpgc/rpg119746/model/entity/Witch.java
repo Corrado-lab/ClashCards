@@ -5,7 +5,6 @@ public class Witch extends Enemy{
     public Witch (){
 
         super("Witch", 100, 40, 80);
-        
     }
 
 }

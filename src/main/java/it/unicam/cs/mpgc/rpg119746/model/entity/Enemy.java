@@ -10,4 +10,7 @@ public class Enemy extends GameCharacter{
         this.expReward=expReward;
 
     }
+
+    public int getExpReward() {return this.expReward; }
+
 }

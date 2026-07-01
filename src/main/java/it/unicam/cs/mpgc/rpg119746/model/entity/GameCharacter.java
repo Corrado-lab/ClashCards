@@ -6,6 +6,7 @@ public abstract class GameCharacter {
     private int healthPoints;
     private final int maxHealthPoints;
     private final int baseDamage;
+    private boolean isAlive;
 
     public GameCharacter(String name, int maxHealthPoints, int baseDamage){
 
@@ -13,8 +14,15 @@ public abstract class GameCharacter {
         this.healthPoints= maxHealthPoints;
         this.maxHealthPoints= maxHealthPoints;
         this.baseDamage= baseDamage;
+        this.isAlive=true;
 
 
     }
+
+    public String getName() { return name; }
+    public int getHealthPoints() { return healthPoints; }
+    public int getMaxHealthPoints() { return maxHealthPoints; }
+    public int getBaseDamage() { return baseDamage; }
+
 
 }
