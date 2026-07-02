@@ -6,7 +6,7 @@ public abstract class GameCharacter {
     private int healthPoints;
     private final int maxHealthPoints;
     private  int baseDamage;
-    private boolean isAlive;
+    
 
     public GameCharacter(String name, int maxHealthPoints, int baseDamage){
 
@@ -14,9 +14,7 @@ public abstract class GameCharacter {
         this.healthPoints= maxHealthPoints;
         this.maxHealthPoints= maxHealthPoints;
         this.baseDamage= baseDamage;
-        this.isAlive=true;
-
-
+        
     }
 
     public String getName() { return name; }
@@ -30,7 +28,7 @@ public abstract class GameCharacter {
         }
     this.baseDamage=damage;}
 
-    public boolean isAlive() { return this.isAlive; }
+    public boolean isAlive() { return this.healthPoints > 0; }
 
     public void attack(GameCharacter target) {
 
@@ -52,11 +50,7 @@ public abstract class GameCharacter {
             throw new IllegalArgumentException("Il danno non può essere negativo! Danno inserito: " + damage);
         }
         
-        this.healthPoints -= damage;
-        if (this.healthPoints <= 0) {
-            this.healthPoints = 0;
-            this.isAlive = false;
-        }
+        this.healthPoints = Math.max(0, this.healthPoints - damage);
     }
     
     public abstract void useAbility(GameCharacter target);
