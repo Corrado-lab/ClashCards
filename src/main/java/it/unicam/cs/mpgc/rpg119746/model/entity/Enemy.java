@@ -15,4 +15,12 @@ public abstract class Enemy extends GameCharacter{
 
     public int getExpReward() {return this.expReward; }
 
+    @Override
+    public String toString() {
+       
+        return super.toString() + "\n" +
+               " Ricompensa EXP: " + this.getExpReward();
+    }
+
+
 }

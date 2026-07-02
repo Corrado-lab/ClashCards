@@ -72,5 +72,15 @@ public abstract class GameCharacter {
         }
     }
 
+    @Override
+    public String toString() {
+        
+        return this.getName() + 
+               " HP: " + this.getHealthPoints() + "/" + this.getMaxHealthPoints()  + "\n" +
+               " Danno Base: " + this.getBaseDamage() + "\n" + 
+               " Vivo: " + this.isAlive();
+    }
+
+
 
 }

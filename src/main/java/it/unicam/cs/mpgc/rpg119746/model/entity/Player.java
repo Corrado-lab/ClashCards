@@ -67,6 +67,15 @@ private void levelUp() {
         this.heal(this.getMaxHealthPoints()); 
 }
 
+    @Override
+    public String toString() {
+       
+        return super.toString() + "\n" +
+               " Livello: " + this.getLevel() + "\n" + 
+               " EXP: " + this.getCurrentExp() + "/" + this.getExpToNextLevel();
+    }
+
+
 
 
 
