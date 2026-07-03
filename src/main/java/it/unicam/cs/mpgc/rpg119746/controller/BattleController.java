@@ -75,5 +75,14 @@ public class BattleController {
     private void handleDefeat() {
         System.out.println("\n Il Warden è è stato sconfitto, hai perso.");
     }
+
+    public boolean isBattleOver() {
+        return !player.isAlive() || !enemy.isAlive();
+    }
+
+
+    public boolean isPlayerVictorious() {
+        return player.isAlive() && !enemy.isAlive();
+    }
     
 }
