@@ -4,7 +4,7 @@ public class Yeti extends Enemy{
 
     public Yeti (){
 
-        super("Yeti", 150, 30, 70);
+        super("Yeti", 150, 20, 70);
 
     }
 

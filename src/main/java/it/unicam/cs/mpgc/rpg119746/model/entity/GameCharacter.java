@@ -4,7 +4,7 @@ public abstract class GameCharacter {
 
     private final String name;
     private int healthPoints;
-    private final int maxHealthPoints;
+    protected int maxHealthPoints;
     private  int baseDamage;
     
 

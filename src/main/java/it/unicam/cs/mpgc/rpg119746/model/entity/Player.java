@@ -52,7 +52,7 @@ public void gainExperience(int exp) {
         if (exp > 0) {
             this.currentExp += exp;
 
-            if (this.currentExp >= this.expToNextLevel) {
+            while (this.currentExp >= this.expToNextLevel) {
                 levelUp();
             }
         }
@@ -62,7 +62,8 @@ private void levelUp() {
 
         this.level++;
         this.currentExp -= this.expToNextLevel; 
-        this.expToNextLevel += 50; 
+        this.expToNextLevel += 50;
+        this.maxHealthPoints += 50;
         
         this.heal(this.getMaxHealthPoints()); 
 }
