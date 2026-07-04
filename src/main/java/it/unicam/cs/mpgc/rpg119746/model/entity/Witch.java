@@ -4,9 +4,9 @@ public class Witch extends Enemy{
 
     private boolean hasUsedAbility = false;
 
-    public Witch (){
+    public Witch(String name, int maxHealthPoints, int baseDamage, int expReward) {
 
-        super("Witch", 100, 20, 80);
+        super(name, maxHealthPoints, baseDamage, expReward);
     }
 
     @Override

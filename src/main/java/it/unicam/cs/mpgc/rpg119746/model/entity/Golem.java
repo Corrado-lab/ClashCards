@@ -5,10 +5,9 @@ public class Golem extends Enemy{
     private boolean isAbilityActive = false;
     private int turnCounter = 0;
 
-    public Golem (){
+    public Golem(String name, int maxHealthPoints, int baseDamage, int expReward) {
 
-        super("Golem", 200, 10, 50);
-
+        super(name, maxHealthPoints, baseDamage, expReward);
     }
 
     @Override

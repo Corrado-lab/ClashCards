@@ -2,10 +2,9 @@ package it.unicam.cs.mpgc.rpg119746.model.entity;
 
 public class Yeti extends Enemy{
 
-    public Yeti (){
+    public Yeti(String name, int maxHealthPoints, int baseDamage, int expReward) {
 
-        super("Yeti", 150, 20, 70);
-
+        super(name, maxHealthPoints, baseDamage, expReward);
     }
 
     @Override
