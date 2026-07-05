@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enemies>
+    <enemy>
+        <name>Golem</name>
+        <maxHealth>100</maxHealth>
+        <attack>10</attack>
+        <rewardExperience>50</rewardExperience>
+    </enemy>
+    
+    <enemy>
+        <name>Witch</name>
+        <maxHealth>120</maxHealth>
+        <attack>20</attack>
+        <rewardExperience>80</rewardExperience>
+    </enemy>
+    
+    <enemy>
+        <name>Yeti</name>
+        <maxHealth>150</maxHealth>
+        <attack>20</attack>
+        <rewardExperience>100</rewardExperience>
+    </enemy>
+</enemies>
