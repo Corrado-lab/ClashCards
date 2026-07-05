@@ -1,38 +1,32 @@
 package it.unicam.cs.mpgc.rpg119746.controller;
 
-import it.unicam.cs.mpgc.rpg119746.model.entity.*;
+import it.unicam.cs.mpgc.rpg119746.model.entity.Player;
+import it.unicam.cs.mpgc.rpg119746.model.entity.Enemy;
+import it.unicam.cs.mpgc.rpg119746.persistence.EnemyRepository;
 
 public class GameController {
 
     private final Player player;
+    private final EnemyRepository enemyRepository;
     private BattleController currentBattle;
     private int currentStage;
 
     public GameController(String playerName) {
-        
         this.player = new Player(playerName, 150, 20);
         this.currentStage = 0;
+        this.enemyRepository = new EnemyRepository();
     }
 
     public Player getPlayer() { return player; }
     public BattleController getCurrentBattle() { return currentBattle; }
     public int getCurrentStage() { return currentStage; }
 
-    private Enemy createEnemyForCurrentStage() {
-        switch (this.currentStage) {
-            case 0: return new Golem();
-            case 1: return new Witch();
-            case 2: return new Yeti();
-            default: return null;
-        }
-    }
-
     public void startNextBattle() {
         if (isGameWon() || !player.isAlive()) return;
 
-        Enemy currentEnemy = createEnemyForCurrentStage();
-        if (currentEnemy != null) {
+        Enemy currentEnemy = this.enemyRepository.getEnemyForStage(this.currentStage);
 
+        if (currentEnemy != null) {
             this.currentBattle = new BattleController(player, currentEnemy);
         }
     }
@@ -42,7 +36,7 @@ public class GameController {
 
         if (currentBattle.isPlayerVictorious()) {
             this.currentStage++;
-            
+
             if (isGameWon()) {
                 System.out.println("\n Hai vinto la partita! ");
             } else {
@@ -54,7 +48,6 @@ public class GameController {
     }
 
     public boolean isGameWon() {
-        return this.currentStage > 2;
+        return this.currentStage >= this.enemyRepository.getTotalStages();
     }
-
 }
