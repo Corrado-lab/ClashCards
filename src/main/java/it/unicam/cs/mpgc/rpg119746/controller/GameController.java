@@ -17,6 +17,12 @@ public class GameController {
         this.enemyRepository = new EnemyRepository();
     }
 
+    public GameController(Player player, int currentStage) {
+        this.player = player;
+        this.currentStage = currentStage;
+        this.enemyRepository = new EnemyRepository();
+    }
+
     public Player getPlayer() { return player; }
     public BattleController getCurrentBattle() { return currentBattle; }
     public int getCurrentStage() { return currentStage; }

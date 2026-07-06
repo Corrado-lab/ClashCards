@@ -24,6 +24,9 @@ public class BattleController {
     public Enemy getEnemy() { return enemy; }
     public boolean isPlayerTurn() { return isPlayerTurn; }
 
+    public void setPlayerTurn(boolean playerTurn) {
+        this.isPlayerTurn = playerTurn;
+    }
 
     public void executePlayerAttack() {
         if (!isPlayerTurn || !player.isAlive() || !enemy.isAlive()) return;
