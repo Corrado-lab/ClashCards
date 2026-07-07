@@ -1,6 +1,9 @@
-package it.unicam.cs.mpgc.rpg119746.model.entity;
+package it.unicam.cs.mpgc.rpg119746.model.enemies;
 
-public class Golem extends Enemy{
+import it.unicam.cs.mpgc.rpg119746.model.characters.Enemy;
+import it.unicam.cs.mpgc.rpg119746.model.characters.GameCharacter;
+
+public class Golem extends Enemy {
 
     private boolean isAbilityActive = false;
     private int turnCounter = 0;

@@ -1,10 +1,9 @@
 package it.unicam.cs.mpgc.rpg119746.persistence;
 
-import it.unicam.cs.mpgc.rpg119746.model.entity.Enemy;
-import it.unicam.cs.mpgc.rpg119746.model.entity.Golem;
-import it.unicam.cs.mpgc.rpg119746.model.entity.Witch;
-import it.unicam.cs.mpgc.rpg119746.model.entity.Yeti;
-import it.unicam.cs.mpgc.rpg119746.model.entity.GameCharacter;
+import it.unicam.cs.mpgc.rpg119746.model.characters.Enemy;
+import it.unicam.cs.mpgc.rpg119746.model.enemies.Golem;
+import it.unicam.cs.mpgc.rpg119746.model.enemies.Witch;
+import it.unicam.cs.mpgc.rpg119746.model.enemies.Yeti;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

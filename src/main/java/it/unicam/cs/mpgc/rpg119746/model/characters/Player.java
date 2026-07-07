@@ -1,6 +1,6 @@
-package it.unicam.cs.mpgc.rpg119746.model.entity;
+package it.unicam.cs.mpgc.rpg119746.model.characters;
 
-public class Player extends GameCharacter{
+public class Player extends GameCharacter {
 
     private int level;
     private int currentExp;

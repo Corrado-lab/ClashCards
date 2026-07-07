@@ -1,6 +1,9 @@
-package it.unicam.cs.mpgc.rpg119746.model.entity;
+package it.unicam.cs.mpgc.rpg119746.model.enemies;
 
-public class Witch extends Enemy{
+import it.unicam.cs.mpgc.rpg119746.model.characters.Enemy;
+import it.unicam.cs.mpgc.rpg119746.model.characters.GameCharacter;
+
+public class Witch extends Enemy {
 
     private boolean hasUsedAbility = false;
 

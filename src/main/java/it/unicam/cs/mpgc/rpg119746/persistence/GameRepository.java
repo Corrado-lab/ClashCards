@@ -2,7 +2,7 @@ package it.unicam.cs.mpgc.rpg119746.persistence;
 
 import it.unicam.cs.mpgc.rpg119746.controller.GameController;
 import it.unicam.cs.mpgc.rpg119746.controller.BattleController;
-import it.unicam.cs.mpgc.rpg119746.model.entity.Player;
+import it.unicam.cs.mpgc.rpg119746.model.characters.Player;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.FileReader;

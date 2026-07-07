@@ -1,4 +1,4 @@
-package it.unicam.cs.mpgc.rpg119746.model.entity;
+package it.unicam.cs.mpgc.rpg119746.model.characters;
 
 public abstract class GameCharacter {
 

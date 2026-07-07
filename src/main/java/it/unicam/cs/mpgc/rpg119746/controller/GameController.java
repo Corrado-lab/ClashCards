@@ -1,7 +1,7 @@
 package it.unicam.cs.mpgc.rpg119746.controller;
 
-import it.unicam.cs.mpgc.rpg119746.model.entity.Player;
-import it.unicam.cs.mpgc.rpg119746.model.entity.Enemy;
+import it.unicam.cs.mpgc.rpg119746.model.characters.Player;
+import it.unicam.cs.mpgc.rpg119746.model.characters.Enemy;
 import it.unicam.cs.mpgc.rpg119746.persistence.EnemyRepository;
 
 public class GameController {
