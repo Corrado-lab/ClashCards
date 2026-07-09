@@ -4,7 +4,7 @@ public abstract class GameCharacter {
 
     private final String name;
     private int healthPoints;
-    protected int maxHealthPoints;
+    private int maxHealthPoints;
     private  int baseDamage;
     
 
@@ -64,6 +64,11 @@ public abstract class GameCharacter {
         
             this.healthPoints = Math.min(this.maxHealthPoints, this.healthPoints + amount);
         }
+    }    public void addMaxHealth(int amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("L'aumento di vita massima deve essere positivo!");
+        }
+        this.maxHealthPoints += amount;
     }
 
     @Override

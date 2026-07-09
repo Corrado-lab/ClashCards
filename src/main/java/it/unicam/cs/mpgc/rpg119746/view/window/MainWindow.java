@@ -243,6 +243,7 @@ public class MainWindow extends JFrame {
             this.statusMessageLabel.setText("Partita salvata.");
             JOptionPane.showMessageDialog(this, "Salvataggio completato!", "Salva", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception exception) {
+            exception.printStackTrace();
             this.statusMessageLabel.setText("Impossibile salvare il gioco.");
         }
     }
@@ -253,6 +254,7 @@ public class MainWindow extends JFrame {
             new MainWindow(loadedController);
             this.dispose();
         } catch (Exception exception) {
+            exception.printStackTrace();
             this.statusMessageLabel.setText("Errore durante il caricamento.");
             JOptionPane.showMessageDialog(this, "Nessun salvataggio valido trovato.", "Errore", JOptionPane.ERROR_MESSAGE);
         }

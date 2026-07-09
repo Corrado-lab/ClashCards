@@ -63,7 +63,7 @@ private void levelUp() {
         this.level++;
         this.currentExp -= this.expToNextLevel; 
         this.expToNextLevel += 50;
-        this.maxHealthPoints += 50;
+        this.addMaxHealth(50);
         
         this.heal(this.getMaxHealthPoints()); 
 }
