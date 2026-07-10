@@ -37,6 +37,12 @@ public class GameController {
         }
     }
 
+    public void restoreBattle(Enemy savedEnemy) {
+
+        if (isGameWon() || !player.isAlive() || savedEnemy == null) return;
+        this.currentBattle = new BattleController(player, savedEnemy);
+    }
+
     public void handleBattleEnd() {
         if (currentBattle == null) return;
 
