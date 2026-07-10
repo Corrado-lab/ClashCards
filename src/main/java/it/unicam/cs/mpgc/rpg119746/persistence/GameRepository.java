@@ -3,6 +3,7 @@ package it.unicam.cs.mpgc.rpg119746.persistence;
 import it.unicam.cs.mpgc.rpg119746.controller.GameController;
 import it.unicam.cs.mpgc.rpg119746.controller.BattleController;
 import it.unicam.cs.mpgc.rpg119746.model.characters.Player;
+import it.unicam.cs.mpgc.rpg119746.model.characters.Enemy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.FileReader;
@@ -14,6 +15,7 @@ public class GameRepository {
 
     public GameRepository() {
         this.gson = new GsonBuilder()
+                .registerTypeAdapter(Enemy.class, new EnemyTypeAdapter())
                 .setPrettyPrinting()
                 .create();
     }
@@ -22,12 +24,11 @@ public class GameRepository {
         Player player;
         int currentStage;
         boolean isBattleActive;
-        int enemyHp;
+        Enemy enemy;
         boolean isPlayerTurn;
     }
 
     public void saveGame(final GameController gameController, final String filePath) {
-
         GameSave save = new GameSave();
         save.player = gameController.getPlayer();
         save.currentStage = gameController.getCurrentStage();
@@ -35,7 +36,7 @@ public class GameRepository {
         BattleController battle = gameController.getCurrentBattle();
         if (battle != null && !battle.isBattleOver()) {
             save.isBattleActive = true;
-            save.enemyHp = battle.getEnemy().getHealthPoints();
+            save.enemy = battle.getEnemy();
             save.isPlayerTurn = battle.isPlayerTurn();
         } else {
             save.isBattleActive = false;
@@ -50,20 +51,16 @@ public class GameRepository {
 
     public GameController loadGame(final String filePath) {
         try (FileReader reader = new FileReader(filePath)) {
-
             GameSave save = this.gson.fromJson(reader, GameSave.class);
 
             GameController controller = new GameController(save.player, save.currentStage);
 
-            if (save.isBattleActive) {
-                controller.startNextBattle();
+            if (save.isBattleActive && save.enemy != null) {
+
+                controller.restoreBattle(save.enemy);
+
                 BattleController battle = controller.getCurrentBattle();
-
                 if (battle != null) {
-
-                    int damageToApply = battle.getEnemy().getMaxHealthPoints() - save.enemyHp;
-                    battle.getEnemy().takeDamage(damageToApply);
-
                     battle.setPlayerTurn(save.isPlayerTurn);
                 }
             }
