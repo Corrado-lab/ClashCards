@@ -166,7 +166,7 @@ public class StartWindow extends JFrame {
             return;
         }
         GameController gameController = new GameController(playerName);
-        JOptionPane.showMessageDialog(this, "Mazzo pronto per " + playerName + "!\nI duelli a carte stanno per iniziare.");
+        JOptionPane.showMessageDialog(this, "Battaglia pronta per " + playerName + "!\nI duelli a carte stanno per iniziare.");
         new MainWindow(gameController);
         this.dispose();
     }
