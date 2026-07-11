@@ -40,8 +40,7 @@ public class BattleController {
         if (!isPlayerTurn || !player.isAlive() || !enemy.isAlive()) return;
 
         player.useAbility(enemy);
-        System.out.println("Il Warden infliggerà danni doppi!");
-        
+
     }
 
     
@@ -55,28 +54,17 @@ public class BattleController {
         }
     }
 
-    
     private void executeEnemyTurn() {
-        
         enemy.takeTurn(player);
-        
-        if (!player.isAlive()) {
-            handleDefeat();
-        } else {
 
+        if (player.isAlive()) {
             this.isPlayerTurn = true;
         }
     }
 
     
     private void handleVictory() {
-        System.out.println("\n Bene! Hai sconfitto " + enemy.getName() + "!");
         player.gainExperience(enemy.getExpReward());
-    }
-
-    
-    private void handleDefeat() {
-        System.out.println("\n Il Warden è è stato sconfitto, hai perso.");
     }
 
     public boolean isBattleOver() {

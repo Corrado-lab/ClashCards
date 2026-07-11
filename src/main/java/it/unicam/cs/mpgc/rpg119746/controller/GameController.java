@@ -48,14 +48,6 @@ public class GameController {
 
         if (currentBattle.isPlayerVictorious()) {
             this.currentStage++;
-
-            if (isGameWon()) {
-                System.out.println("\n Hai vinto la partita! ");
-            } else {
-                System.out.println("\n Battaglia superata, prossima sfida! ");
-            }
-        } else {
-            System.out.println("\n Hai perso la partita! ") ;
         }
     }
 
