@@ -30,8 +30,6 @@ Il progetto è stato realizzato per il corso di Modellazione e Gestione della Co
 
 ## 💻 Build ed Esecuzione
 
-Il progetto include il Gradle Wrapper, quindi non è necessario avere Gradle installato localmente per eseguire i comandi.
-
 ### Prerequisiti
 * **Java 25** (LTS)
 * **Gradle** (gestito automaticamente tramite Gradle Wrapper)
@@ -67,9 +65,12 @@ Per eseguire esclusivamente la suite di test JUnit senza ricompilare l'intero pr
 Per lo sviluppo di *ClashCards* è stato utilizzato **Gemini (Google AI)** come assistente virtuale e tutor alla programmazione.
 
 ### Attività svolte con il supporto dell'AI:
-* **Debugging e Risoluzione Errori:** Supporto nell'analisi dei flussi di salvataggio polimorfici con Gson e problemi di compilazione Gradle.
-* **Approfondimento Teorico:** Supporto nello studio dei meccanismi di persistenza dei dati (JSON/XML) e organizzazione dei layout dinamici in Swing.
-* **Refactoring del Codice:** Suggerimenti per l'ottimizzazione del codice e per il rispetto dei principi della programmazione ad oggetti (OOP).
+* **Risoluzione di Conflitti di Compilazione e Ambiente** 
+* **Gestione della Persistenza Polimorfica** 
+* **Refactoring in Ottica SOLID e OOP** 
+* **Supporto allo Sviluppo dell'Interfaccia Grafica**
+* **Strutturazione e Revisione della Documentazione**
+
 
 Ogni suggerimento fornito dallo strumento è stato analizzato e compreso a fondo prima dell'integrazione nel codice sorgente.
 
